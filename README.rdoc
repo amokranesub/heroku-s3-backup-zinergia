@@ -17,6 +17,7 @@ Other than that, it's the same...
 3. Run the HerokuS3Backup.backup method from your console or a cronjob
 
      task :cron => :environment do
+       require 'heroku-s3-backup-zinergia'
        HerokuDatabaseBackupToS3.backup
      end
 
