@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "heroku-s3-backup-zinergia"
 
-  s.add_dependency('right_aws', '>= 2.1.0')
+  s.add_dependency('aws-s3', '~> 0.6.2')
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
