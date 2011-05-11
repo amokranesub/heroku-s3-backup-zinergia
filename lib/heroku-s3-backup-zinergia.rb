@@ -17,6 +17,11 @@ class HerokuDatabaseBackupToS3
       bucket_name = "#{ENV['APP_NAME']}-heroku-backups"
       create_bucket_if_it_does_not_exist(bucket_name)
       
+      AWS::S3::Base.establish_connection!(
+              :access_key_id     => ENV['s3_access_key_id'],
+              :secret_access_key => ENV['s3_secret_access_key']
+            )
+      
       AWS::S3::S3Object.store(name, open("tmp/#{name}"),
                               bucket_name,
                               :access => :private)
